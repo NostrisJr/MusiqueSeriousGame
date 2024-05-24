@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enigma : Interactable
@@ -89,5 +88,6 @@ public class Enigma : Interactable
         Invoke(nameof(closeEnigma), 1f);
         door.GetComponent<Animator>().SetBool("IsOpen", true);
         player.GetComponent<PlayerUI>().UpdateText("You have solved the enigma!");
+        promptMessage = string.Empty;
     }
 }
