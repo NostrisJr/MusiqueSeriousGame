@@ -8,7 +8,8 @@ public class EnigmaManager : MonoBehaviour
     public Image cursorImage;
     public Answer answer;
     public float distancePrecision;
-    private bool isCorrectlyAnswered = false;
+    [HideInInspector]
+    public bool isCorrectlyAnswered = false;
 
     private void Update()
     {

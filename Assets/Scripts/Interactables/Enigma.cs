@@ -20,17 +20,9 @@ public class Enigma : Interactable
     private float transitionDuration = .3f;
     private bool isTransitioning = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    [SerializeField]
+    private GameObject door;
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     protected override void Interact()
     {
         player.GetComponent<PlayerMotor>().canMove = false;
@@ -95,6 +87,7 @@ public class Enigma : Interactable
     public void victory()
     {
         Invoke(nameof(closeEnigma), 1f);
+        door.GetComponent<Animator>().SetBool("IsOpen", true);
         player.GetComponent<PlayerUI>().UpdateText("You have solved the enigma!");
     }
 }
