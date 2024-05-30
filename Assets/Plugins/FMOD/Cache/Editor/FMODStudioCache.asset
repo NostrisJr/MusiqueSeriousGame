@@ -1,6 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< HEAD
 --- !u!114 &-7538279118817686686
+=======
+--- !u!114 &-6799915671344040990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../Documents/Music/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638521659289355813
+  FileSizes:
+  - Name: Desktop
+    Value: 806
+  Exists: 1
+--- !u!114 &-4788727879424976166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../Documents/Music/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638521659289344308
+  FileSizes:
+  - Name: Desktop
+    Value: 1036
+  Exists: 1
+--- !u!114 &-1966023265925943795
+>>>>>>> a964790 (jsp)
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19,7 +63,11 @@ MonoBehaviour:
     Data3: 775213712
     Data4: -803420302
   Banks:
+<<<<<<< HEAD
   - {fileID: -5180155535790486553}
+=======
+  - {fileID: 4031271769092456058}
+>>>>>>> a964790 (jsp)
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -27,6 +75,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 229799
+<<<<<<< HEAD
 --- !u!114 &-5180155535790486553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47,6 +96,8 @@ MonoBehaviour:
   - Name: Desktop
     Value: 12504928
   Exists: 1
+=======
+>>>>>>> a964790 (jsp)
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,6 +111,7 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
+<<<<<<< HEAD
   - {fileID: 6589618240854932763}
   - {fileID: -5180155535790486553}
   - {fileID: 1988063966464481903}
@@ -73,6 +125,21 @@ MonoBehaviour:
   cacheTime: 638521659362459722
   cacheVersion: 131618
 --- !u!114 &1988063966464481903
+=======
+  - {fileID: -6799915671344040990}
+  - {fileID: 4031271769092456058}
+  - {fileID: -4788727879424976166}
+  EditorEvents:
+  - {fileID: -1966023265925943795}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: -4788727879424976166}
+  StringsBanks:
+  - {fileID: -6799915671344040990}
+  cacheTime: 638521659362459722
+  cacheVersion: 131618
+--- !u!114 &4031271769092456058
+>>>>>>> a964790 (jsp)
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -82,6 +149,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+<<<<<<< HEAD
   m_Name: bank:/Master.bank
   m_EditorClassIdentifier: 
   Path: ../Documents/Music/Build/Desktop/Master.bank
@@ -111,4 +179,15 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 806
+=======
+  m_Name: bank:/Lv1.bank
+  m_EditorClassIdentifier: 
+  Path: ../Documents/Music/Build/Desktop/Lv1.bank
+  Name: Lv1
+  StudioPath: bank:/Lv1
+  lastModified: 638521659362459722
+  FileSizes:
+  - Name: Desktop
+    Value: 12504928
+>>>>>>> a964790 (jsp)
   Exists: 1
