@@ -1,26 +1,23 @@
 using System.Collections;
 using UnityEngine;
+using FMODUnity;
 
 public class Enigma : Interactable
 {
-    [SerializeField]
-    private Camera movingCamera;
+    [SerializeField] private Camera movingCamera;
 
-    [SerializeField]
-    private Camera playerCamera;
+    [SerializeField] private Camera playerCamera;
 
-    [SerializeField]
-    private Camera enigmaCamera;
+    [SerializeField] private Camera enigmaCamera;
 
-    [SerializeField]
-    private GameObject player;
+    [SerializeField] private GameObject player;
     public GameObject enigmaCanvas;
     public GameObject mainUI;
     private float transitionDuration = .3f;
     private bool isTransitioning = false;
 
-    [SerializeField]
-    private GameObject door;
+    [SerializeField] private GameObject door;
+    [SerializeField] private EventReference enigmaOpeningSound;
 
     protected override void Interact()
     {
@@ -28,6 +25,8 @@ public class Enigma : Interactable
         if (!isTransitioning)
         {
             StartCoroutine(moveCamera(playerCamera, enigmaCamera, transitionDuration));
+            AudioManager.instance.PlayOneShot(enigmaOpeningSound, this.transform.position);
+
         }
 
         player.SetActive(false);
