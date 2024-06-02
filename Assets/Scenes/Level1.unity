@@ -11937,7 +11937,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1992144422}
   m_Father: {fileID: 780068112}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &818788759
@@ -21790,7 +21791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravityValue: -9.81
-  jumpHeight: 3
+  jumpHeight: 1
   speed: 5
   canMove: 1
 --- !u!114 &1542294476
@@ -26220,13 +26221,6 @@ MonoBehaviour:
   enigmaCanvas: {fileID: 1031888456}
   mainUI: {fileID: 1907123915}
   door: {fileID: 153390379}
-  enigmaOpeningSound:
-    Guid:
-      Data1: 667498577
-      Data2: 1238887638
-      Data3: 227242918
-      Data4: -1397246667
-    Path: event:/Enigma
 --- !u!1001 &1831249525
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28358,6 +28352,64 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5172894714416467773, guid: ac936ad7ddc749a41a651adf7537ca96, type: 3}
   m_PrefabInstance: {fileID: 1979661893}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1992144421
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1992144422}
+  - component: {fileID: 1992144423}
+  m_Layer: 0
+  m_Name: FMODEvents
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1992144422
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992144421}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 818788758}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1992144423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992144421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36124ca310c05404280586cad08c9d33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <enigmaOpeningSFX>k__BackingField:
+    Guid:
+      Data1: 667498577
+      Data2: 1238887638
+      Data3: 227242918
+      Data4: -1397246667
+    Path: event:/SFX/Enigma
+  <ambianceLv1>k__BackingField:
+    Guid:
+      Data1: -98824896
+      Data2: 1320207228
+      Data3: -1256059768
+      Data4: -1656637270
+    Path: event:/Ambiance/Nature
 --- !u!1001 &1995633653
 PrefabInstance:
   m_ObjectHideFlags: 0

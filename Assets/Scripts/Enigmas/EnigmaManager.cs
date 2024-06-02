@@ -9,7 +9,8 @@ public class EnigmaManager : MonoBehaviour
     public Answer answer;
     public float distancePrecision;
     [HideInInspector]
-    public bool isCorrectlyAnswered = false;
+    private bool isCorrectlyAnswered = false;
+    private bool isEnigmaSolved = false;
 
     private void Update()
     {
@@ -35,10 +36,12 @@ public class EnigmaManager : MonoBehaviour
         }
         isCorrectlyAnswered = answer.choiceID == answer.answerID;
 
-        if (isCorrectlyAnswered)
+        if (isCorrectlyAnswered && !isEnigmaSolved)
         {
             enigma.victory();
+            isEnigmaSolved = true;
         }
+
     }
 
     public void OnMouseDown(EnigmaChoice enigmaChoice)
