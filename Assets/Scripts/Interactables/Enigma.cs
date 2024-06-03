@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using FMODUnity;
+using FMOD.Studio;
 
 public class Enigma : Interactable
 {
@@ -13,11 +14,11 @@ public class Enigma : Interactable
     [SerializeField] private GameObject player;
     public GameObject enigmaCanvas;
     public GameObject mainUI;
+    public MusicState onFinishState;
     private float transitionDuration = .3f;
     private bool isTransitioning = false;
 
     [SerializeField] private GameObject door;
-    [SerializeField] private EventReference enigmaOpeningSound;
 
     protected override void Interact()
     {
@@ -25,8 +26,6 @@ public class Enigma : Interactable
         if (!isTransitioning)
         {
             StartCoroutine(moveCamera(playerCamera, enigmaCamera, transitionDuration));
-            AudioManager.instance.PlayOneShot(enigmaOpeningSound, this.transform.position);
-
         }
 
         player.SetActive(false);
@@ -39,6 +38,8 @@ public class Enigma : Interactable
 
         fromCamera.enabled = false;
         movingCamera.enabled = true;
+        movingCamera.GetComponent<StudioListener>().enabled = true;
+        playerCamera.GetComponent<StudioListener>().enabled = false;
 
         Vector3 fromPosition = fromCamera.transform.position;
         Quaternion fromRotation = fromCamera.transform.rotation;
@@ -79,14 +80,28 @@ public class Enigma : Interactable
         player.GetComponent<PlayerMotor>().canMove = true;
 
         movingCamera.enabled = false;
+        movingCamera.GetComponent<StudioListener>().enabled = false;
+        playerCamera.GetComponent<StudioListener>().enabled = true;
         playerCamera.enabled = true;
+
     }
 
     public void victory()
     {
-        Invoke(nameof(closeEnigma), 1f);
-        door.GetComponent<Animator>().SetBool("IsOpen", true);
+        StartCoroutine(VictorySequence());
+    }
+
+    private IEnumerator VictorySequence()
+    {
+        yield return new WaitForSeconds(1f);
+        closeEnigma();
+        door.GetComponent<Animator>().SetBool("Open", true);
+
         player.GetComponent<PlayerUI>().UpdateText("You have solved the enigma!");
-        promptMessage = string.Empty;
+        promptMessage = "You have solved the enigma!";
+        AudioManager.instance.SetMusicState(onFinishState);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.enigmaOpeningSFX, this.transform.position);
+
     }
 }
+

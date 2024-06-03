@@ -20,6 +20,15 @@ public class InputManager : MonoBehaviour
         look = GetComponent<PlayerLook>();
 
         onFoot.Jump.performed += ctx => motor.Jump();
+        onFoot.Run.performed += ctx =>
+        {
+            motor.speed = 10f;
+        };
+
+        onFoot.Run.canceled += ctx =>
+        {
+            motor.speed = 5f;
+        };
     }
 
     // Update is called once per frame

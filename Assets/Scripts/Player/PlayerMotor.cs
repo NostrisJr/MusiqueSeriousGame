@@ -11,13 +11,11 @@ public class PlayerMotor : MonoBehaviour
     public float jumpHeight = 2.0f;
     public float speed = 5f;
     public bool canMove = true;
-    // Start is called before the first frame update
     void Start()
     {
         controller = GetComponent<CharacterController>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         isGrounded = controller.isGrounded;
@@ -50,4 +48,5 @@ public class PlayerMotor : MonoBehaviour
             playerVelocity.y = Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
         }
     }
+
 }
