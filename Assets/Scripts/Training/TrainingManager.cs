@@ -10,6 +10,7 @@ public class TrainingManager : MonoBehaviour
     public Image cursorImage;
     public TrainingAnswer answer;
     public float distancePrecision;
+    public bool isChords = false;
 
     private void Update()
     {
@@ -28,8 +29,10 @@ public class TrainingManager : MonoBehaviour
                     answer.GetComponent<Image>().sprite = currentTrainingChoice.GetComponent<Image>().sprite;
                     answer.trainingState = currentTrainingChoice.trainingState;
                 }
-                currentTrainingChoice = null;
+
                 AudioManager.instance.SetTrainingState(answer.trainingState);
+                currentTrainingChoice = null;
+
 
             }
         }
@@ -44,6 +47,14 @@ public class TrainingManager : MonoBehaviour
             cursorImage.gameObject.SetActive(true);
             cursorImage.sprite = currentTrainingChoice.GetComponent<Image>().sprite;
         }
+    }
+
+    public void OnChordClicked(TrainingChoice trainingChoice)
+    {
+
+        currentTrainingChoice = trainingChoice;
+        AudioManager.instance.SetTrainingState(currentTrainingChoice.trainingState);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.chord, this.transform.position);
     }
 
 }
